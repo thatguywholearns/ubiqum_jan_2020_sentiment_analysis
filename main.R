@@ -153,7 +153,7 @@ iphoneRFE <- data_iphone[,predictors(rfeResults)]
 iphoneRFE$iphonesentiment <- data_iphone$iphonesentiment
 
 # Save results to csv so we can open these in R markdown
-write.csv(iphoneRFE, file = "/Users/davidverbiest/google_drive/data_science/ubiqum/m4/t3/data/rfeResults.csv")
+write.csv(iphoneRFE, file = "./data/rfeResults.csv")
 
 # review outcome
 str(iphoneRFE)
@@ -214,7 +214,7 @@ model <- train(iphonesentiment ~ .,
 # Make predictions on the results of the webcrawl
   
 # Load webscraped data that will be used to estimate sentiment of the data -->
-testing <- read.csv(file = "/Users/davidverbiest/google_drive/data_science/ubiqum/m4/t3/data/join_concat_concat_factors.csv")
+testing <- read.csv(file = "./data/join_concat_concat_factors.csv")
 
 # Just like mentioned above we will drop the reviews that have less than 3 mentions of the brand
 testing <- testing[testing$iphone > 2,]
